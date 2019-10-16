@@ -1,0 +1,7 @@
+<dataset>
+    <departments id="1" name="coast"/>
+    <departments id="3" name="city"/>
+    <employees id="2" name="Testy" phone="123" department_id="1"/>
+    <addresses city="asd" street="fgh" employee_id="2"/>
+    <departments_employees department_id="1" employees_id="2"/>
+</dataset>

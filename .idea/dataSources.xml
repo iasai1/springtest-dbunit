@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="testDB" uuid="d1f70a7d-7266-475a-91da-403e78bf618c">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="thangDB" uuid="e02eed44-d7df-40a7-8cab-1745d2557d5f">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:file:$PROJECT_DIR$/data/thangDB</jdbc-url>
+    </data-source>
+  </component>
+</project>

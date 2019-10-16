@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="thangDB">
+  <database-model serializer="dbm" dbms="H2" family-id="H2" format-version="4.16">
+    <root id="1">
+      <ServerVersion>1.4.196</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="THANGDB">
+      <Current>1</Current>
+    </database>
+    <schema id="3" parent="2" name="INFORMATION_SCHEMA"/>
+    <schema id="4" parent="2" name="PUBLIC">
+      <Current>1</Current>
+    </schema>
+    <table id="5" parent="4" name="ADDRESSES"/>
+    <table id="6" parent="4" name="DEPARTMENTS"/>
+    <table id="7" parent="4" name="EMPLOYEES"/>
+    <column id="8" parent="5" name="CITY">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="9" parent="5" name="STREET">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="10" parent="5" name="EMPLOYEE_ID">
+      <Position>3</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="11" parent="5" name="PRIMARY_KEY_D">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>EMPLOYEE_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="12" parent="5" name="CONSTRAINT_D">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>EMPLOYEE_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="13" parent="5" name="FKN245YK1J248VWB8SXDCSU6EAO">
+      <ColNames>EMPLOYEE_ID</ColNames>
+      <RefTableName>EMPLOYEES</RefTableName>
+      <RefKeyName>CONSTRAINT_4</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="14" parent="6" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_78B61889_CF18_4EDE_B2B9_D5FFC2047D1E)</DefaultExpression>
+    </column>
+    <column id="15" parent="6" name="NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="16" parent="6" name="PRIMARY_KEY_9">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="17" parent="6" name="CONSTRAINT_9">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="18" parent="7" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_4192A64E_0502_41A5_913D_93A0407EDE8E)</DefaultExpression>
+    </column>
+    <column id="19" parent="7" name="NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="20" parent="7" name="PHONE">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="21" parent="7" name="DEPARTMENT_ID">
+      <Position>4</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+    </column>
+    <index id="22" parent="7" name="PRIMARY_KEY_4">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="23" parent="7" name="FKGY4QE3DNQRM3KTD76SXP7N4C2_INDEX_4">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>DEPARTMENT_ID</ColNames>
+    </index>
+    <key id="24" parent="7" name="CONSTRAINT_4">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="25" parent="7" name="FKGY4QE3DNQRM3KTD76SXP7N4C2">
+      <ColNames>DEPARTMENT_ID</ColNames>
+      <RefTableName>DEPARTMENTS</RefTableName>
+      <RefKeyName>CONSTRAINT_9</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
