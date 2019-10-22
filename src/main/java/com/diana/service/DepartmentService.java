@@ -9,10 +9,14 @@ public interface DepartmentService {
 
     Department findById(Long id);
 
+    Department findByName(String name);
+
     List<Employee> getAllEmployeesByName(String name);
 
     List<Department> getAll();
 
     void add(Department department);
+
+    String rename(Long id, String name);
 
 }

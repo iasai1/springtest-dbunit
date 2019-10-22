@@ -14,5 +14,5 @@ public interface DepartmentDAO {
 
     void add(Department department);
 
-
+    void merge(Department department);
 }

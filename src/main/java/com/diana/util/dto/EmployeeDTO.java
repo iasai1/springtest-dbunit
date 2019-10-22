@@ -1,4 +1,4 @@
-package com.diana.util;
+package com.diana.util.dto;
 
 import com.diana.model.Address;
 import com.diana.model.Employee;

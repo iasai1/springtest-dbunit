@@ -35,6 +35,7 @@ public class DAOTestConfig {
             this.put("hibernate.cache.use_second_level_cache", true);
             this.put("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
             this.put("hibernate.generate_statistics", true);
+            this.put("spring.jpa.properties.hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         }}));
         return sessionFactoryBean;
     }

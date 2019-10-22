@@ -38,6 +38,7 @@ public class PersistenceConfig {
                 this.put("hibernate.format_sql", true);
                 this.put("hibernate.cache.use_second_level_cache", true);
                 this.put("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
+                this.put("spring.jpa.database-platform", "org.hibernate.dialect.H2Dialect");
         }}));
         return sessionFactoryBean;
     }

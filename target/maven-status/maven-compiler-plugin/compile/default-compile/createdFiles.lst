@@ -4,6 +4,7 @@ com\diana\model\Employee.class
 com\diana\dao\AddressDAO.class
 com\diana\dao\AddressDAOImpl.class
 com\diana\config\PersistenceConfig.class
+com\diana\util\EmployeeInfoDTO.class
 com\diana\controller\EmployeeController.class
 com\diana\dao\EmployeeDAO.class
 com\diana\service\EmployeeService.class

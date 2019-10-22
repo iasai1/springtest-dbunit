@@ -38,4 +38,8 @@ public class DepartmentDAOImpl implements  DepartmentDAO{
         entityManager.persist(department);
     }
 
+    @Override
+    public void merge(Department department) {
+        entityManager.merge(department);
+    }
 }

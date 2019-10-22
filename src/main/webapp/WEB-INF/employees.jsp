@@ -30,20 +30,20 @@
         </c:forEach>
         <tr>
             <td><button type="button" id="newEmp">New Employee</button></td>
-            <td><td><button type="button" id="newDep">New Department</button></td></td>
+            <td><td><button type="button" id="deps">Departmentы</button></td></td>
         </tr>
     </table>
 </body>
 
 <script>
 
-    $("#newDep").on("click", function () {
-        window.location = "/newDepartment";
-    })
+    $("#deps").on("click", function () {
+        window.location = "/departments";
+    });
 
     $("#newEmp").on("click", function () {
         window.location = "/newEmployee";
-    })
+    });
 
     $(".btnInfo").on("click", function () {
 
@@ -54,7 +54,7 @@
             contentType: 'application/json',
             url: "/employeeInfo" + id
         }).done(function (data) {
-            alert(data);
+            alert(JSON.parse(data));
         }).fail(function () {
             alert("An Error occured");
         });

@@ -41,6 +41,12 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
+    public Employee findByPhone(String phone) {
+        return entityManager.createQuery("select e from Employee e where e.phone = :phone", Employee.class)
+                .setParameter("phone", phone).getResultList().stream().findAny().orElse(null);
+    }
+
+    @Override
     public void add(Employee employee) {
         entityManager.persist(employee);
     }

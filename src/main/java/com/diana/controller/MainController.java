@@ -40,4 +40,10 @@ public class MainController {
         model.addAttribute("departments", departmentService.getAll());
         return "/newEmployee";
     }
+
+    @GetMapping("/departments")
+    public String showDeps(Model model){
+        model.addAttribute("departments", departmentService.getAll());
+        return "/departments";
+    }
 }

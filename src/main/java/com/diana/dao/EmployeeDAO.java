@@ -12,6 +12,8 @@ public interface EmployeeDAO {
 
     Employee findByName(String name);
 
+    Employee findByPhone(String phone);
+
     List<Employee> getAll();
 
     void add(Employee employee);

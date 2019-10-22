@@ -3,6 +3,7 @@ package com.diana.model;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,11 +22,14 @@ public class Department {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "department")
     private List<Employee> employees;
 
-    public Department(){};
+    public Department(){
+        this.employees = new ArrayList<>();
+    };
 
     public Department(String name, List<Employee> employees) {
         this.name = name;
         this.employees = employees;
+        this.employees = new ArrayList<>();
     }
 
     public Long getId() {
