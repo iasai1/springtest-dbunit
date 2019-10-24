@@ -27,10 +27,10 @@ public class EmployeeDTOValidator implements Validator {
     public void validate(Object o, Errors errors) {
         EmployeeDTO dto = (EmployeeDTO) o;
 
-        if (dto.getName().matches("^[a-zA-Z]+$")){
+        if (!dto.getName().matches("^[a-zA-Z]+$")){
             throw new MalformedInputException("Employee's name should only contain letters");
         }
-        if (dto.getPhone().matches("^[0-9]+$")){
+        if (!dto.getPhone().matches("^[0-9]+$")){
             throw new MalformedInputException("Employee's phone should only contain numbers");
         }
 

@@ -66,8 +66,8 @@
             processData: false
         }).done(function () {
             window.location = '/employees';
-        }).fail(function () {
-            alert("An Error occured");
+        }).error(function (data, textStatus, xhr) {
+            alert(data.responseText);
         });
     })
 </script>

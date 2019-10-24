@@ -23,7 +23,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -32,14 +31,13 @@ import org.springframework.web.context.WebApplicationContext;
 
 import java.io.IOException;
 
-import static net.bytebuddy.matcher.ElementMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ContextConfiguration(classes = ControllerTestConfig.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-public class RESTControllerTest {
+public class EmployeeRESTControllerTest {
 
     @Autowired
     private WebApplicationContext wac;
@@ -79,6 +77,9 @@ public class RESTControllerTest {
     @Test
     public void testCreateEmp() throws Exception{
         EmployeeDTO employeeDTO = new EmployeeDTO("Testy", "1234", "city", "street", "coast");
+
+        Mockito.when(employeeService.findByName("Testy")).thenReturn(null);
+        Mockito.when(employeeService.findByPhone("1234")).thenReturn(null);
 
         ResultActions result = mockMvc.perform(post("/newEmployee")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
@@ -133,18 +134,25 @@ public class RESTControllerTest {
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(convertObjectToJsonString(employeeDTO)))
                 .andDo(MockMvcResultHandlers.print())
-                .andExpect(status().isNotAcceptable());
+                .andExpect(status().isBadRequest());
 
-
-
+        Mockito.verify(employeeService, Mockito.times(1)).findByName("Testy");
+        Mockito.verifyNoMoreInteractions(employeeService);
     }
 
     @Test
     public void testAddEmployee_MalformedName() throws Exception{
 
+        EmployeeDTO employeeDTO = new EmployeeDTO("Testy1234", "1234", "city", "street", "coast");
+
+        mockMvc.perform(post("/newEmployee")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(convertObjectToJsonString(employeeDTO)))
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isNotAcceptable());
     }
 
-    private static String convertObjectToJsonString(Object object) throws IOException {
+    public static String convertObjectToJsonString(Object object) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         return mapper.writeValueAsString(object);

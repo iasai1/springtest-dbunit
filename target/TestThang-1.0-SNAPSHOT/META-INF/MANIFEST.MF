@@ -1,5 +1,4 @@
 Manifest-Version: 1.0
-Created-By: IntelliJ IDEA
-Built-By: ishipitc
-Build-Jdk: 11.0.4
+Created-By: Maven Archiver 3.4.0
+Build-Jdk-Spec: 11
 

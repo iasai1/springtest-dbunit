@@ -1,12 +1,11 @@
-com\diana\dao\EmployeeDAOTest.class
-com\diana\config\IntTestConfig$1.class
-com\diana\controller\RESTControllerTest.class
-com\diana\controller\MainControllerTest.class
-com\diana\util\HibernateCacheTest.class
 com\diana\config\ControllerTestConfig.class
 com\diana\config\DAOTestConfig$1.class
+com\diana\dao\EmployeeDAOTest.class
 com\diana\config\ServiceTestConfig.class
+com\diana\controller\EmployeeRESTControllerTest.class
+com\diana\controller\MainControllerTest.class
+com\diana\controller\DepartmentRESTControllerTest.class
+com\diana\util\HibernateCacheTest.class
 com\diana\service\EmployeeServiceTest.class
 com\diana\integration\IntTest.class
-com\diana\config\IntTestConfig.class
 com\diana\config\DAOTestConfig.class

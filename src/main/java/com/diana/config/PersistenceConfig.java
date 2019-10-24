@@ -1,7 +1,10 @@
 package com.diana.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -16,10 +19,14 @@ import javax.validation.Validator;
 import java.util.Properties;
 
 @Configuration
+@Profile("default")
 public class PersistenceConfig {
+
+    static final Logger LOG = LoggerFactory.getLogger(PersistenceConfig.class);
 
     @Bean
     public DataSource dataSource(){
+        LOG.warn("Initializing default datasource");
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.h2.Driver");
         dataSource.setUrl("jdbc:h2:file:C:/Users/ishipitc/IdeaProjects/TestThang/data/thangDB");

@@ -15,6 +15,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
@@ -22,35 +23,39 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
+import org.springframework.test.context.web.WebAppConfiguration;
 
 
 import static java.lang.Thread.sleep;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = IntTestConfig.class)
-@TestExecutionListeners({ DependencyInjectionTestExecutionListener.class,
+@ContextConfiguration(classes = {IntTestConfig.class})
+@ActiveProfiles("test")
+@TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
         DirtiesContextTestExecutionListener.class,
         TransactionalTestExecutionListener.class,
-        DbUnitTestExecutionListener.class })
+        DbUnitTestExecutionListener.class})
 @DatabaseSetup("intTestDB.xml")
-@ActiveProfiles("test")
 public class IntTest {
 
-    private static final String PORT = "8953";
+    private static final int PORT = 8953;
 
     private static final Logger LOG = LoggerFactory.getLogger(IntTest.class);
 
     private WebDriver webDriver = null;
 
+
     @Before
-    public void setUp(){
+    public void setUp() throws Exception {
+
         System.setProperty("webdriver.chrome.driver", "C:\\DevTools\\chromedriver.exe");
         webDriver = new ChromeDriver();
         webDriver.manage().window().setSize(new Dimension(800, 600));
+
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() throws Exception{
         webDriver.quit();
     }
 
@@ -60,15 +65,26 @@ public class IntTest {
 
         Assert.assertNotSame(webDriver.findElements(By.className("btnInfo")).size(), 0);
         Assert.assertNotSame(webDriver.findElements(By.id("newEmp")).size(), 0);
-        Assert.assertNotSame(webDriver.findElements(By.id("newDep")).size(), 0);
+        Assert.assertNotSame(webDriver.findElements(By.id("deps")).size(), 0);
     }
 
-    //TODO: new link structure
-    /*
+
+
     @Test
     @ExpectedDatabase("initTestDB-addDep-expected.xml")
     public void test_goToNewDep_thenCreateDep_thenGoBack() throws  Exception{
-        webDriver.get("http://localhost:" + PORT + "/employees");
+
+        webDriver.get("http://localhost:"+ PORT +"/");
+
+        sleep(100);
+
+        Assert.assertEquals("http://localhost:"+ PORT +"/employees", webDriver.getCurrentUrl());
+
+        webDriver.findElement(By.id("deps")).click();
+
+        sleep(100);
+
+        Assert.assertEquals("http://localhost:"+ PORT +"/departments", webDriver.getCurrentUrl());
 
         webDriver.findElement(By.id("newDep")).click();
 
@@ -87,7 +103,7 @@ public class IntTest {
         Assert.assertEquals("http://localhost:"+ PORT +"/employees", webDriver.getCurrentUrl());
 
     }
-*/
+
 
     @Test
     @ExpectedDatabase("initTestDB-addEmp-expected.xml")

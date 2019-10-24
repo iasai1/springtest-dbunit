@@ -74,8 +74,8 @@
                         processData: false
                     }).done(function () {
                         window.location = '/departments';
-                    }).fail(function (data, xhr) {
-                        alert(data);
+                    }).error(function (data, textStatus, xhr) {
+                        alert(data.responseText);
                     });
                 }
             }],

@@ -26,6 +26,11 @@ public class Department {
         this.employees = new ArrayList<>();
     };
 
+    public Department(String name) {
+        this.name = name;
+        this.employees = new ArrayList<>();
+    }
+
     public Department(String name, List<Employee> employees) {
         this.name = name;
         this.employees = employees;

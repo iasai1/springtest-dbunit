@@ -7,68 +7,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be925670-5586-449b-bde1-950b3709a471" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/diana/controller/ErrorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/dto/DepRenameDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/dto/EmployeeInfoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/error/EntityAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/error/EntityNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/error/MalformedInputException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/validator/DepartmentDTOValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/validator/DepartmentValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/validator/EmployeeDTOValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/diana/config/ControllerTestConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/diana/config/ServiceTestConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/diana/controller/MainControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/diana/controller/RESTControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/diana/service/EmployeeServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application-test.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/diana/controller/DepartmentRESTControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/diana/server/EmbeddedJetty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/jetty-test-ds.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/TestThang_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/TestThang_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/thangDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/thangDB.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/thangDB.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/thangDB.trace.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/config/PersistenceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/config/PersistenceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/controller/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/controller/DepartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/dao/DepartmentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/dao/DepartmentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/dao/DepartmentDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/dao/DepartmentDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/dao/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/dao/EmployeeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/dao/EmployeeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/dao/EmployeeDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/config/WebAppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/config/WebAppInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/model/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/model/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/service/DepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/service/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/service/DepartmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/service/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/service/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/util/EmployeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/dto/EmployeeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/util/dto/DepRenameDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/dto/DepRenameDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/util/validator/EmployeeDTOValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/validator/EmployeeDTOValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/departments.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/departments.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employees.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employees.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/config/DAOTestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/config/DAOTestConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/config/IntTestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/config/IntTestConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/newDep.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/newDep.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/newEmployee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/newEmployee.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/config/IntTestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/config/IntTestConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/controller/RESTControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/controller/EmployeeRESTControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/integration/IntTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/integration/IntTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application-test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/META-INF/maven/com.diana/TestThang/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/META-INF/maven/com.diana/TestThang/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/controller/initTestDB-expected.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/controller/initTestDB-expected.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/controller/intTestDB.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/controller/intTestDB.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/dao/daoTestDB-addEmp-expected.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/dao/daoTestDB-addEmp-expected.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/dao/daoTestDB-delEmp-expected.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/dao/daoTestDB-delEmp-expected.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/dao/daoTestDB.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/dao/daoTestDB.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/integration/initTestDB-addDep-expected.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/integration/initTestDB-addDep-expected.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/integration/initTestDB-addEmp-expected.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/integration/initTestDB-addEmp-expected.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/integration/intTestDB.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/integration/intTestDB.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/util/utilTestDB.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/com/diana/util/utilTestDB.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/META-INF/TestThang.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/departments.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/departments.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/employees.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/employees.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/failsafe-reports/failsafe-summary.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/newDep.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/newDep.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/newEmployee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/newEmployee.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/TestThang.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/TEST-com.diana.integration.IntTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/com.diana.integration.IntTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/failsafe-reports/failsafe-summary.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.MainControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.MainControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.RESTControllerTest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.dao.EmployeeDAOTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.dao.EmployeeDAOTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.service.EmployeeServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.service.EmployeeServiceTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.util.HibernateCacheTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.util.HibernateCacheTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.MainControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.MainControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.RESTControllerTest.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.dao.EmployeeDAOTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.dao.EmployeeDAOTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.service.EmployeeServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.service.EmployeeServiceTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.util.HibernateCacheTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.util.HibernateCacheTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/TestThang.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/application-test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tmp/jsp/org/apache/jsp/WEB_002dINF/employees_jsp.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -152,6 +141,9 @@
       <recent name="C:\Users\ishipitc\IdeaProjects\TestThang\src\test\java\com\diana\dbUnit" />
       <recent name="C:\Users\ishipitc\IdeaProjects\TestThang\src\main\webapp\WEB-INF" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.diana.config" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ishipitc\IdeaProjects\TestThang\src\test\resources" />
       <recent name="C:\Users\ishipitc\IdeaProjects\TestThang\src\main\resources\com\diana\integration" />
@@ -165,10 +157,11 @@
       <command value="mvn jetty:stop" />
       <command value="mvn failsafe:integration-test" />
       <command value="mvn failsafe:integration-tests" />
-      <command value="mvn verify" />
       <command value="mvn mvn dependency:tree" />
-      <command value="mvn clean install" />
       <command value="mvn dependency:tree" />
+      <command value="mvn verify" />
+      <command value="mvn jetty:run -Ptest" />
+      <command value="mvn clean install" />
       <command value="mvn jetty:run" />
     </option>
   </component>
@@ -184,17 +177,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RESTControllerTest.testAddExistingEmployee">
-    <configuration name="EmployeeServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.IntTest">
+    <configuration name="DepartmentRESTControllerTest.testAddExistingDep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestThang" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.diana.service.*" />
+          <option name="PATTERN" value="com.diana.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.diana.service" />
-      <option name="MAIN_CLASS_NAME" value="com.diana.service.EmployeeServiceTest" />
+      <option name="PACKAGE_NAME" value="com.diana.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.diana.controller.DepartmentRESTControllerTest" />
+      <option name="METHOD_NAME" value="testAddExistingDep" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestThang" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.diana.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.diana.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.diana.integration.IntTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -215,49 +224,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RESTControllerTest.testAddExistingEmployee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntTest.test_goToNewDep_thenCreateDep_thenGoBack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestThang" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.diana.controller.*" />
+          <option name="PATTERN" value="com.diana.integration.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.diana.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.diana.controller.RESTControllerTest" />
-      <option name="METHOD_NAME" value="testAddExistingEmployee" />
+      <option name="PACKAGE_NAME" value="com.diana.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.diana.integration.IntTest" />
+      <option name="METHOD_NAME" value="test_goToNewDep_thenCreateDep_thenGoBack" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RESTControllerTest.testGetInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntTest.test_goToNewEmp_thenCreateEmp_thenGoBack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestThang" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.diana.controller.*" />
+          <option name="PATTERN" value="com.diana.integration.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.diana.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.diana.controller.RESTControllerTest" />
-      <option name="METHOD_NAME" value="testGetInfo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RESTControllerTest.testGetInfo_notExisting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestThang" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.diana.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.diana.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.diana.controller.RESTControllerTest" />
-      <option name="METHOD_NAME" value="testGetInfo_notExisting" />
+      <option name="PACKAGE_NAME" value="com.diana.integration" />
+      <option name="MAIN_CLASS_NAME" value="com.diana.integration.IntTest" />
+      <option name="METHOD_NAME" value="test_goToNewEmp_thenCreateEmp_thenGoBack" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1118,21 +1111,21 @@
     </configuration>
     <list>
       <item itemvalue="Jetty Server.Jetty 9" />
-      <item itemvalue="JUnit.RESTControllerTest.testGetInfo" />
+      <item itemvalue="JUnit.DepartmentRESTControllerTest.testAddExistingDep" />
+      <item itemvalue="JUnit.IntTest.test_goToNewDep_thenCreateDep_thenGoBack" />
+      <item itemvalue="JUnit.IntTest.test_goToNewEmp_thenCreateEmp_thenGoBack" />
       <item itemvalue="JUnit.IntTest" />
+      <item itemvalue="JUnit.IntTest (1)" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.26" />
       <item itemvalue="XSLT.Unnamed" />
-      <item itemvalue="JUnit.EmployeeServiceTest" />
-      <item itemvalue="JUnit.RESTControllerTest.testGetInfo_notExisting" />
-      <item itemvalue="JUnit.RESTControllerTest.testAddExistingEmployee" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RESTControllerTest.testAddExistingEmployee" />
-        <item itemvalue="JUnit.RESTControllerTest.testGetInfo_notExisting" />
-        <item itemvalue="JUnit.EmployeeServiceTest" />
         <item itemvalue="JUnit.IntTest" />
-        <item itemvalue="JUnit.RESTControllerTest.testGetInfo" />
+        <item itemvalue="JUnit.IntTest.test_goToNewDep_thenCreateDep_thenGoBack" />
+        <item itemvalue="JUnit.IntTest (1)" />
+        <item itemvalue="JUnit.IntTest.test_goToNewEmp_thenCreateEmp_thenGoBack" />
+        <item itemvalue="JUnit.DepartmentRESTControllerTest.testAddExistingDep" />
       </list>
     </recent_temporary>
   </component>
@@ -1182,7 +1175,11 @@
       <workItem from="1571633881658" duration="11705000" />
       <workItem from="1571659669604" duration="1155000" />
       <workItem from="1571660843929" duration="10505000" />
-      <workItem from="1571721027659" duration="7007000" />
+      <workItem from="1571721027659" duration="14709000" />
+      <workItem from="1571742282871" duration="8072000" />
+      <workItem from="1571809316352" duration="4509000" />
+      <workItem from="1571815256440" duration="10816000" />
+      <workItem from="1571893386516" duration="6377000" />
     </task>
     <servers />
   </component>
@@ -1201,21 +1198,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/diana/model/Department.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/diana/model/Department.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

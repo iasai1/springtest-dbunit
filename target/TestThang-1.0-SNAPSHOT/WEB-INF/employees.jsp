@@ -54,9 +54,9 @@
             contentType: 'application/json',
             url: "/employeeInfo" + id
         }).done(function (data) {
-            alert(JSON.parse(data));
-        }).fail(function () {
-            alert("An Error occured");
+            alert(JSON.stringify(data));
+        }).error(function (data, textStatus, xhr) {
+            alert(data.responseText);
         });
     })
 
