@@ -1,6 +1,7 @@
 package com.diana.integration;
 
 import com.diana.config.IntTestConfig;
+import com.diana.config.PersistenceConfig;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
@@ -29,7 +30,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import static java.lang.Thread.sleep;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {IntTestConfig.class})
+@ContextConfiguration(classes = {PersistenceConfig.class})
 @ActiveProfiles("test")
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
         DirtiesContextTestExecutionListener.class,

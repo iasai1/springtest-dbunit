@@ -24,6 +24,7 @@ com\diana\model\Department.class
 com\diana\dao\EmployeeDAOImpl.class
 com\diana\service\DepartmentService.class
 com\diana\config\WebConfig.class
+com\diana\config\PersistenceConfig$2.class
 com\diana\dao\DepartmentDAOImpl.class
 com\diana\service\EmployeeServiceImpl.class
 com\diana\controller\MainController.class
