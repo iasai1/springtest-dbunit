@@ -23,8 +23,8 @@ public class PersistenceConfig {
 
     static final Logger LOG = LoggerFactory.getLogger(PersistenceConfig.class);
 
+    @Profile("dev")
     @Bean
-    @Profile("!test")
     public DataSource dataSource(){
         LOG.warn("Initializing default datasource");
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -35,8 +35,8 @@ public class PersistenceConfig {
         return dataSource;
     }
 
+    @Profile("dev")
     @Bean
-    @Profile("!test")
     public LocalSessionFactoryBean sessionFactoryBean(DataSource dataSource){
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource);
@@ -51,8 +51,8 @@ public class PersistenceConfig {
         return sessionFactoryBean;
     }
 
+    @Profile("dev")
     @Bean
-    @Profile("!test")
     public EntityManagerFactory entityManagerFactory(DataSource dataSource){
         HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
         jpaVendorAdapter.setShowSql(true);
@@ -66,14 +66,15 @@ public class PersistenceConfig {
         return entityManagerFactoryBean.getObject();
     }
 
+    @Profile("dev")
     @Bean
-    @Profile("!test")
     public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory){
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory);
         return  transactionManager;
     }
 
+    /*
     @Profile("test")
     @Bean
     public DataSource testDataSource(){
@@ -136,5 +137,7 @@ public class PersistenceConfig {
     public Validator localValidatorFactoryBean(){
         return new LocalValidatorFactoryBean();
     }
+
+     */
 
 }

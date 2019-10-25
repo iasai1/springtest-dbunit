@@ -7,13 +7,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be925670-5586-449b-bde1-950b3709a471" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/thangDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/thangDB.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/thangDB.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/thangDB.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/config/IntTestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/config/IntTestConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/config/PersistenceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/config/PersistenceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/config/WebAppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/config/WebAppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/diana/integration/intTestDB.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/diana/integration/intTestDB.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/integration/IntTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/integration/IntTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/META-INF/maven/com.diana/TestThang/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/META-INF/maven/com.diana/TestThang/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/diana/integration/intTestDB.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/diana/integration/intTestDB.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.DepartmentRESTControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.DepartmentRESTControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.EmployeeRESTControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.EmployeeRESTControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.MainControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.MainControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.dao.EmployeeDAOTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.dao.EmployeeDAOTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.service.EmployeeServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.service.EmployeeServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.util.HibernateCacheTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.util.HibernateCacheTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.DepartmentRESTControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.DepartmentRESTControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.EmployeeRESTControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.EmployeeRESTControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.MainControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.MainControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.dao.EmployeeDAOTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.dao.EmployeeDAOTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.service.EmployeeServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.service.EmployeeServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.util.HibernateCacheTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.util.HibernateCacheTest.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +52,15 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="testDB" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="testDB" type="feb32156:DbDataSourceImpl" />
+        <item name="TESTDB: database" type="2aa06773:H2ImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="thangDB" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
@@ -47,6 +73,13 @@
         <item name="thangDB" type="feb32156:DbDataSourceImpl" />
         <item name="THANGDB: database" type="2aa06773:H2ImplModel$Database" />
         <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="thangDB" type="feb32156:DbDataSourceImpl" />
+        <item name="THANGDB: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="EMPLOYEES: table" type="818c1b4a:H2ImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -119,6 +152,7 @@
       <command value="mvn jetty:run -Ptest" />
       <command value="mvn clean install" />
       <command value="mvn jetty:run" />
+      <command value="mvn jetty:run -Dspring.profiles.active=&quot;test&quot;" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -1089,7 +1123,27 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@40c336ad" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@40c336ad" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2ab261b" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@40c336ad" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3c327b92" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@40c336ad" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@20fde4d3" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -1135,7 +1189,9 @@
       <workItem from="1571742282871" duration="8072000" />
       <workItem from="1571809316352" duration="4509000" />
       <workItem from="1571815256440" duration="10816000" />
-      <workItem from="1571893386516" duration="9846000" />
+      <workItem from="1571893386516" duration="18015000" />
+      <workItem from="1571922311309" duration="969000" />
+      <workItem from="1571981527942" duration="1261000" />
     </task>
     <servers />
   </component>

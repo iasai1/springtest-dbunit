@@ -5,11 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.validation.Validator;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -21,6 +24,7 @@ public class IntTestConfig {
 
     static final Logger LOG = LoggerFactory.getLogger(IntTestConfig.class);
 
+    @Profile("test")
     @Bean
     public DataSource dataSource(){
         LOG.warn("Initializing test datasource");
@@ -32,6 +36,7 @@ public class IntTestConfig {
         return dataSource;
     }
 
+    @Profile("test")
     @Bean
     public LocalSessionFactoryBean sessionFactoryBean(DataSource dataSource){
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
@@ -48,6 +53,7 @@ public class IntTestConfig {
         return sessionFactoryBean;
     }
 
+    @Profile("test")
     @Bean
     public EntityManagerFactory entityManagerFactory(DataSource dataSource){
         HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
@@ -62,13 +68,14 @@ public class IntTestConfig {
         return entityManagerFactoryBean.getObject();
     }
 
+    @Profile("test")
     @Bean
     public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory){
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory);
         return  transactionManager;
     }
-/*
+
     @Bean
     public PersistenceExceptionTranslationPostProcessor persistenceExceptionTranslationPostProcessor(){
         return new PersistenceExceptionTranslationPostProcessor();
@@ -77,7 +84,10 @@ public class IntTestConfig {
     @Bean
     public Validator localValidatorFactoryBean(){
         return new LocalValidatorFactoryBean();
+
     }
+
+    /*
 
     @Bean
     public AddressDAO addressDAO(){ return new AddressDAOImpl(); }

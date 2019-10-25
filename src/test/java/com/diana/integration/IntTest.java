@@ -16,7 +16,11 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.annotation.Profile;
+import org.springframework.core.env.Environment;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
@@ -24,20 +28,23 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import static java.lang.Thread.sleep;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {PersistenceConfig.class})
 @ActiveProfiles("test")
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = {IntTestConfig.class})
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
         DirtiesContextTestExecutionListener.class,
         TransactionalTestExecutionListener.class,
         DbUnitTestExecutionListener.class})
 @DatabaseSetup("intTestDB.xml")
 public class IntTest {
+
+    @Autowired
+    private Environment environment;
 
     private static final int PORT = 8953;
 
@@ -49,10 +56,14 @@ public class IntTest {
     @Before
     public void setUp() throws Exception {
 
+        for (String profileName : environment.getActiveProfiles()) {
+            System.out.println("Currently active profile - " + profileName);
+        }
+
+       // System.setProperty("spring.profiles.active", "test");
         System.setProperty("webdriver.chrome.driver", "C:\\DevTools\\chromedriver.exe");
         webDriver = new ChromeDriver();
         webDriver.manage().window().setSize(new Dimension(800, 600));
-
     }
 
     @After
