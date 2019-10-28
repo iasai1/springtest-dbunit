@@ -1,5 +1,5 @@
 package com.diana.config;
-
+/*
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -112,7 +112,7 @@ public class IntTestConfig {
     public EmployeeService employeeService(){
         return new EmployeeServiceImpl();
     }
-
+}
  */
 
-}
+

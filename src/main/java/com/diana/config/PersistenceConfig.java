@@ -2,42 +2,43 @@ package com.diana.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
-import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jndi.JndiTemplate;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
+import javax.naming.InitialContext;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-import javax.validation.Validator;
 import java.util.Properties;
 
 @Configuration
+@PropertySource("classpath:application.properties")
 public class PersistenceConfig {
 
     static final Logger LOG = LoggerFactory.getLogger(PersistenceConfig.class);
 
-    @Profile("dev")
     @Bean
-    public DataSource dataSource(){
-        LOG.warn("Initializing default datasource");
+    public DataSource dataSource(@Value("${spring.datasource.driverClassName}") String driver,
+                                 @Value("${spring.datasource.url}") String url,
+                                 @Value("${spring.datasource.username}") String username,
+                                 @Value("${spring.datasource.password}") String password){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:file:C:/Users/ishipitc/IdeaProjects/TestThang/data/thangDB");
-        dataSource.setUsername("sa");
-        dataSource.setPassword("sa");
+        dataSource.setDriverClassName(driver);
+        dataSource.setUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
         return dataSource;
     }
 
-    @Profile("dev")
     @Bean
-    public LocalSessionFactoryBean sessionFactoryBean(DataSource dataSource){
+    public LocalSessionFactoryBean sessionFactoryBean(DataSource dataSource) throws Exception{
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource);
         sessionFactoryBean.setPackagesToScan("com.diana.model");
@@ -48,10 +49,10 @@ public class PersistenceConfig {
                 this.put("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
                 this.put("spring.jpa.database-platform", "org.hibernate.dialect.H2Dialect");
         }}));
+
         return sessionFactoryBean;
     }
 
-    @Profile("dev")
     @Bean
     public EntityManagerFactory entityManagerFactory(DataSource dataSource){
         HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
@@ -66,7 +67,6 @@ public class PersistenceConfig {
         return entityManagerFactoryBean.getObject();
     }
 
-    @Profile("dev")
     @Bean
     public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory){
         JpaTransactionManager transactionManager = new JpaTransactionManager();

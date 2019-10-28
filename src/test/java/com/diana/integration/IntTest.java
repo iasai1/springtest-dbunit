@@ -1,6 +1,6 @@
 package com.diana.integration;
 
-import com.diana.config.IntTestConfig;
+
 import com.diana.config.PersistenceConfig;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
@@ -35,7 +35,7 @@ import static java.lang.Thread.sleep;
 
 @ActiveProfiles("test")
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {IntTestConfig.class})
+@ContextConfiguration(classes = {PersistenceConfig.class})
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
         DirtiesContextTestExecutionListener.class,
         TransactionalTestExecutionListener.class,

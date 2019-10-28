@@ -1,5 +1,4 @@
 com\diana\util\validator\EmployeeDTOValidator.class
-com\diana\config\IntTestConfig$1.class
 com\diana\config\PersistenceConfig$1.class
 com\diana\util\dto\EmployeeInfoDTO.class
 com\diana\util\validator\DepartmentValidator.class
@@ -31,4 +30,3 @@ com\diana\util\error\MalformedInputException.class
 com\diana\controller\DepartmentController.class
 com\diana\dao\DepartmentDAO.class
 com\diana\util\dto\DepRenameDTO.class
-com\diana\config\IntTestConfig.class
