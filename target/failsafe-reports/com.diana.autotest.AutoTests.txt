@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------
+Test set: com.diana.autotest.AutoTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.644 s <<< FAILURE! - in com.diana.autotest.AutoTests
+test_goToNewDep_thenCreateDep_thenGoBack(com.diana.autotest.AutoTests)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.diana.config.PersistenceConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.jdbc.datasource.lookup.DataSourceLookupFailureException: Failed to look up JNDI DataSource with name 'jdbc/DB'; nested exception is javax.naming.NameNotFoundException: jdbc is not bound; remaining name 'jdbc/DB'
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.jdbc.datasource.lookup.DataSourceLookupFailureException: Failed to look up JNDI DataSource with name 'jdbc/DB'; nested exception is javax.naming.NameNotFoundException: jdbc is not bound; remaining name 'jdbc/DB'
+Caused by: org.springframework.jdbc.datasource.lookup.DataSourceLookupFailureException: Failed to look up JNDI DataSource with name 'jdbc/DB'; nested exception is javax.naming.NameNotFoundException: jdbc is not bound; remaining name 'jdbc/DB'
+Caused by: javax.naming.NameNotFoundException: jdbc is not bound
+
+test_goToNewEmp_thenCreateEmp_thenGoBack(com.diana.autotest.AutoTests)  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.diana.config.PersistenceConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.jdbc.datasource.lookup.DataSourceLookupFailureException: Failed to look up JNDI DataSource with name 'jdbc/DB'; nested exception is javax.naming.NameNotFoundException: jdbc is not bound; remaining name 'jdbc/DB'
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.jdbc.datasource.lookup.DataSourceLookupFailureException: Failed to look up JNDI DataSource with name 'jdbc/DB'; nested exception is javax.naming.NameNotFoundException: jdbc is not bound; remaining name 'jdbc/DB'
+Caused by: org.springframework.jdbc.datasource.lookup.DataSourceLookupFailureException: Failed to look up JNDI DataSource with name 'jdbc/DB'; nested exception is javax.naming.NameNotFoundException: jdbc is not bound; remaining name 'jdbc/DB'
+Caused by: javax.naming.NameNotFoundException: jdbc is not bound
+
+testEmployeeRender(com.diana.autotest.AutoTests)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.diana.config.PersistenceConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.jdbc.datasource.lookup.DataSourceLookupFailureException: Failed to look up JNDI DataSource with name 'jdbc/DB'; nested exception is javax.naming.NameNotFoundException: jdbc is not bound; remaining name 'jdbc/DB'
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.jdbc.datasource.lookup.DataSourceLookupFailureException: Failed to look up JNDI DataSource with name 'jdbc/DB'; nested exception is javax.naming.NameNotFoundException: jdbc is not bound; remaining name 'jdbc/DB'
+Caused by: org.springframework.jdbc.datasource.lookup.DataSourceLookupFailureException: Failed to look up JNDI DataSource with name 'jdbc/DB'; nested exception is javax.naming.NameNotFoundException: jdbc is not bound; remaining name 'jdbc/DB'
+Caused by: javax.naming.NameNotFoundException: jdbc is not bound
+

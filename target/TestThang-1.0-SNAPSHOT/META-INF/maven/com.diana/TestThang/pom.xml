@@ -273,8 +273,8 @@
                         <version>2.13</version>
                         <configuration>
                             <excludes>
-                                <exclude>**/integration/*.*</exclude>
-                                <exclude>**/autotest/*.*</exclude>
+                                <include>**/integration/*.*</include>
+                                <include>**/autotest/*.*</include>
                             </excludes>
                         </configuration>
                     </plugin>
