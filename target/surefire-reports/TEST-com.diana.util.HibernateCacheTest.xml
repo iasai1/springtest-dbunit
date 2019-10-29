@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.diana.util.HibernateCacheTest" time="0.07" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.diana.util.HibernateCacheTest" time="0.089" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.4+10-b304.69"/>
@@ -65,5 +65,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.diana.util.HibernateCacheTest" name="testSecondLvlCache" time="0.07"/>
+  <testcase classname="com.diana.util.HibernateCacheTest" name="testSecondLvlCache" time="0.089"/>
 </testsuite>

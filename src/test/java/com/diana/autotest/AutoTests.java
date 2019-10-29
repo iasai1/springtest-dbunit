@@ -1,5 +1,4 @@
-package com.diana.integration;
-
+package com.diana.autotest;
 
 import com.diana.config.PersistenceConfig;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
@@ -17,10 +16,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.DependsOn;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
@@ -28,39 +25,37 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.test.context.web.WebAppConfiguration;
 
+
+import javax.sql.DataSource;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import static java.lang.Thread.sleep;
 
-@ActiveProfiles("test")
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {PersistenceConfig.class})
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
         DirtiesContextTestExecutionListener.class,
         TransactionalTestExecutionListener.class,
         DbUnitTestExecutionListener.class})
-@DatabaseSetup("intTestDB.xml")
-public class IntTest {
+public class AutoTests {
 
     @Autowired
-    private Environment environment;
+    private ApplicationContext applicationContext;
 
     private static final int PORT = 8953;
 
-    private static final Logger LOG = LoggerFactory.getLogger(IntTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AutoTests.class);
 
     private WebDriver webDriver = null;
 
-
     @Before
     public void setUp() throws Exception {
-
-        for (String profileName : environment.getActiveProfiles()) {
-            System.out.println("Currently active profile - " + profileName);
-        }
-
-       // System.setProperty("spring.profiles.active", "test");
+        resetAutoIncrement(applicationContext, "employees", "departments");
         System.setProperty("webdriver.chrome.driver", "C:\\DevTools\\chromedriver.exe");
         webDriver = new ChromeDriver();
         webDriver.manage().window().setSize(new Dimension(800, 600));
@@ -72,6 +67,7 @@ public class IntTest {
     }
 
     @Test
+    @DatabaseSetup("intTestDB.xml")
     public void testEmployeeRender(){
         webDriver.get("http://localhost:" + PORT +"/employees");
 
@@ -80,9 +76,8 @@ public class IntTest {
         Assert.assertNotSame(webDriver.findElements(By.id("deps")).size(), 0);
     }
 
-
-
     @Test
+    @DatabaseSetup("intTestDB.xml")
     @ExpectedDatabase("initTestDB-addDep-expected.xml")
     public void test_goToNewDep_thenCreateDep_thenGoBack() throws  Exception{
 
@@ -105,19 +100,19 @@ public class IntTest {
         Assert.assertEquals("http://localhost:" + PORT +"/newDepartment", webDriver.getCurrentUrl());
 
         Assert.assertNotSame(webDriver.findElements(By.id("name")).size(), 0);
-        webDriver.findElement(By.id("name")).sendKeys("city");
+        webDriver.findElement(By.id("name")).sendKeys("coast");
 
         Assert.assertNotSame(webDriver.findElements(By.id("add")).size(), 0);
         webDriver.findElement(By.id("add")).click();
 
         sleep(500);
 
-        Assert.assertEquals("http://localhost:"+ PORT +"/employees", webDriver.getCurrentUrl());
+        Assert.assertEquals("http://localhost:"+ PORT +"/departments", webDriver.getCurrentUrl());
 
     }
 
-
     @Test
+    @DatabaseSetup("intTestDB.xml")
     @ExpectedDatabase("initTestDB-addEmp-expected.xml")
     public void test_goToNewEmp_thenCreateEmp_thenGoBack() throws  Exception{
         webDriver.get("http://localhost:"+ PORT +"/employees");
@@ -162,6 +157,19 @@ public class IntTest {
         Alert alert = webDriver.switchTo().alert();
         System.out.println(alert.getText());
         alert.accept();
+    }
+
+    private void resetAutoIncrement(ApplicationContext applicationContext, String... tables) throws SQLException {
+        DataSource dataSource = applicationContext.getBean(DataSource.class);
+        String sqlTemplate = applicationContext.getBean(Environment.class).getRequiredProperty("test.reset.sql.template");
+        try(Connection connection = dataSource.getConnection()){
+            for(String table: tables){
+                try(Statement statement = connection.createStatement()){
+                    String resetSql = String.format(sqlTemplate, table);
+                    statement.execute(resetSql);
+                }
+            }
+        }
     }
 
 }

@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -32,7 +33,6 @@ import javax.transaction.Transactional;
         DirtiesContextTestExecutionListener.class,
         TransactionalTestExecutionListener.class,
         DbUnitTestExecutionListener.class })
-@DatabaseSetup("daoTestDB.xml")
 public class EmployeeDAOTest {
 
     @Autowired
@@ -57,6 +57,8 @@ public class EmployeeDAOTest {
 
     @Test
     @Transactional
+    @Rollback
+    @DatabaseSetup("daoTestDB.xml")
     @ExpectedDatabase("daoTestDB-addEmp-expected.xml")
     public void testAddEmployee(){
 
@@ -81,6 +83,8 @@ public class EmployeeDAOTest {
 
     @Test
     @Transactional
+    @Rollback
+    @DatabaseSetup("daoTestDB.xml")
     @ExpectedDatabase("daoTestDB-delEmp-expected.xml")
     public void testDeleteEmployee(){
 

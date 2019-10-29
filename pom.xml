@@ -227,7 +227,7 @@
                         <version>9.4.20.v20190813</version>
                         <configuration>
                             <webAppConfig>
-                                <jettyEnvXml>src/test/resources/jetty-test-ds.xml</jettyEnvXml>
+                                <jettyEnvXml>src/test/jetty/jetty-env.xml</jettyEnvXml>
                             </webAppConfig>
                             <war>target/TestThang-1.0-SNAPSHOT.war</war>
                             <httpConnector>
@@ -266,7 +266,8 @@
                         <version>2.13</version>
                         <configuration>
                             <excludes>
-                                <exclude>**/integration/*.*</exclude>
+                                <include>**/integration/*.*</include>
+                                <include>**/autotest/*.*</include>
                             </excludes>
                         </configuration>
                     </plugin>
@@ -285,6 +286,7 @@
                                 <phase>integration-test</phase>
                                 <configuration>
                                     <includes>
+                                        <include>**/autotest/*.*</include>
                                         <include>**/integration/*.*</include>
                                     </includes>
                                 </configuration>
@@ -316,11 +318,24 @@
                         <groupId>org.apache.tomcat.maven</groupId>
                         <artifactId>tomcat7-maven-plugin</artifactId>
                         <version>2.2</version>
-                        <configuration>
-                            <server>maven-tomcat-war-deployment-server</server>
-                            <url>http://localhost:9010/manager/</url>
-                            <path>/</path>
-                        </configuration>
+
+                        <executions>
+                            <execution>
+                                <id>deploy</id>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                                <phase>package</phase>
+                                <configuration>
+                                    <url>http://localhost:8953/manager/</url>
+                                    <server>MTS</server>
+                                    <path>/</path>
+                                    <username>admin</username>
+                                    <password>admin</password>
+                                    <update>true</update>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>

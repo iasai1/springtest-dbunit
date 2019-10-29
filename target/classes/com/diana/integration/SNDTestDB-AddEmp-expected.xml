@@ -2,6 +2,6 @@
     <departments id="1" name="coast"/>
     <employees id="2" name="Testy" phone="123" department_id="1"/>
     <employees id="3" name="Toosty" phone="1234" department_id="1"/>
-    <addresses city="asd" street="fgh" employee_id="2"/>
-    <addresses city="asd" street="ggg" employee_id="3"/>
+    <addresses city="city" street="street" employee_id="2"/>
+    <addresses city="city" street="tstreet" employee_id="3"/>
 </dataset>

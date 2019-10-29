@@ -6,12 +6,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@Import(PersistenceConfig.class)
 public class DAOTestConfig {
 
     @Bean
@@ -38,6 +41,27 @@ public class DAOTestConfig {
             this.put("spring.jpa.properties.hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         }}));
         return sessionFactoryBean;
+    }
+
+    @Bean
+    public EntityManagerFactory entityManagerFactory(DataSource dataSource){
+        HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
+        jpaVendorAdapter.setShowSql(true);
+        jpaVendorAdapter.setGenerateDdl(true);
+
+        LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
+        entityManagerFactoryBean.setDataSource(dataSource);
+        entityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
+        entityManagerFactoryBean.setPackagesToScan("com.diana.model");
+        entityManagerFactoryBean.afterPropertiesSet();
+        return entityManagerFactoryBean.getObject();
+    }
+
+    @Bean
+    public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory){
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManagerFactory);
+        return  transactionManager;
     }
 
     @Bean
