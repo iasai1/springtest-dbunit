@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be925670-5586-449b-bde1-950b3709a471" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/autotest/AutoTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/autotest/AutoTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1233,7 +1234,7 @@
       <workItem from="1572334467909" duration="12051000" />
       <workItem from="1572410998461" duration="20585000" />
       <workItem from="1572497062234" duration="4226000" />
-      <workItem from="1572502030700" duration="7689000" />
+      <workItem from="1572502030700" duration="8604000" />
     </task>
     <servers />
   </component>

@@ -130,7 +130,7 @@ public class AutoTests {
     public void testRenameDep_expectAlreadyExists() throws Exception {
         webDriver.get("http://localhost:"+ PORT +"/");
 
-        sleep(200);
+        sleep(100);
 
         Assert.assertEquals("http://localhost:"+ PORT +"/employees", webDriver.getCurrentUrl());
 
