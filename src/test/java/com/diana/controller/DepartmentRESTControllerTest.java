@@ -1,6 +1,7 @@
 package com.diana.controller;
 
 
+import com.diana.TestUtil;
 import com.diana.config.ControllerTestConfig;
 import com.diana.model.Address;
 import com.diana.model.Department;
@@ -73,7 +74,7 @@ public class DepartmentRESTControllerTest {
 
         mockMvc.perform(post("/newDepartment")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(EmployeeRESTControllerTest.convertObjectToJsonString(d)))
+                .content(TestUtil.convertObjectToJsonString(d)))
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isBadRequest());
         Mockito.verify(departmentService, Mockito.times(1)).findByName("coast");

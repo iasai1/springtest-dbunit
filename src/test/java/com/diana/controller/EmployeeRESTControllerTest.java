@@ -31,6 +31,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import java.io.IOException;
 
+import static com.diana.TestUtil.convertObjectToJsonString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -152,10 +153,5 @@ public class EmployeeRESTControllerTest {
                 .andExpect(status().isNotAcceptable());
     }
 
-    public static String convertObjectToJsonString(Object object) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        return mapper.writeValueAsString(object);
-    }
 
 }

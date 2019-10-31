@@ -1,10 +1,8 @@
-package com.diana.integration;
+package com.diana.inner_integration;
 
+import com.diana.config.CNSNDTestConfig;
 import com.diana.config.PersistenceConfig;
-import com.diana.model.Employee;
-import com.diana.service.EmployeeService;
 import com.diana.util.dto.EmployeeDTO;
-import com.diana.util.error.EntityNotFoundException;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
@@ -15,7 +13,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
@@ -31,6 +28,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.io.IOException;
 
@@ -42,7 +40,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {PersistenceConfig.class})
+@ContextConfiguration(classes = {CNSNDTestConfig.class})
+@WebAppConfiguration
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
         DirtiesContextTestExecutionListener.class,
         TransactionalTestExecutionListener.class,
@@ -109,7 +108,6 @@ public class ControllerAndServiceAndDAOIntegration {
     }
 
     @Test
-    @DatabaseSetup("CNSNDTestDB.xml")
     public void testGetInfo_notExisting() throws Exception{
 
         mockMvc.perform(post("/employeeInfo{id}", 1L))

@@ -1,10 +1,13 @@
 package com.diana.config;
 
+import com.diana.controller.*;
 import com.diana.dao.*;
 import com.diana.service.*;
+import com.diana.util.validator.DepartmentDTOValidator;
+import com.diana.util.validator.DepartmentValidator;
+import com.diana.util.validator.EmployeeDTOValidator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -16,7 +19,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-public class SNDTestConfig {
+public class CNSNDTestConfig {
 
     @Bean
     public DataSource dataSource(){
@@ -88,5 +91,26 @@ public class SNDTestConfig {
     public EmployeeService employeeService(){
         return new EmployeeServiceImpl();
     }
+
+    @Bean
+    public EmployeeController employeeController(){ return new EmployeeController(); }
+
+    @Bean
+    public DepartmentController departmentController(){ return new DepartmentController(); }
+
+    @Bean
+    public MainController mainController(){ return new MainController(); }
+
+    @Bean
+    public DepartmentValidator departmentValidator(){return new DepartmentValidator();}
+
+    @Bean
+    public DepartmentDTOValidator departmentDTOValidator(){return new DepartmentDTOValidator();}
+
+    @Bean
+    public EmployeeDTOValidator employeeDTOValidator(){return new EmployeeDTOValidator();}
+
+    @Bean
+    public ErrorController errorController(){return new ErrorController();}
 
 }

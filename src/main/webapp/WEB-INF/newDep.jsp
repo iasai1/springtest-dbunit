@@ -28,7 +28,7 @@
             data: JSON.stringify(dep),
             processData: false
         }).done(function () {
-            window.location = '/employees';
+            window.location = '/departments';
         }).error(function (data, textStatus, xhr) {
             alert(data.responseText);
         });

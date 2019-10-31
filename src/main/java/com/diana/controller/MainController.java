@@ -35,7 +35,7 @@ public class MainController {
         return "/newDep";
     }
 
-    @GetMapping("newEmployee")
+    @GetMapping("/newEmployee")
     public String showNewEmp(Model model){
         model.addAttribute("departments", departmentService.getAll());
         return "/newEmployee";

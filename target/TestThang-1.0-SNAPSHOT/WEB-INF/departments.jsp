@@ -57,6 +57,7 @@
             closeOnEscape: true,
             buttons: [{
                 text: "Save",
+                id: "save",
                 click: function () {
 
                     var name = $(".txtInput").val();

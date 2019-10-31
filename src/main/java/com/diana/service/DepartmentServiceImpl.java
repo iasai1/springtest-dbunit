@@ -23,7 +23,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     public Department findById(Long id) {
         Department department = departmentDAO.findById(id);
         if(department == null){
-            throw new EntityNotFoundException("Department with such id does not exists");
+            throw new EntityNotFoundException("Department with such id does not exist");
         }
         return department;
     }
@@ -47,7 +47,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     public String rename(Long id, String name) {
         Department department = departmentDAO.findById(id);
         if(department == null){
-            throw new EntityNotFoundException("Department with such id does not exists");
+            throw new EntityNotFoundException("Department with such id does not exist");
         }
         department.setName(name);
         departmentDAO.merge(department);

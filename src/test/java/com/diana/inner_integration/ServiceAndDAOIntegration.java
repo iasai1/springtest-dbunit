@@ -1,7 +1,9 @@
-package com.diana.integration;
+package com.diana.inner_integration;
 
 import com.diana.config.SNDTestConfig;
+import com.diana.model.Address;
 import com.diana.model.Employee;
+import com.diana.service.AddressService;
 import com.diana.service.EmployeeService;
 import com.diana.util.dto.EmployeeDTO;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
@@ -23,6 +25,7 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.sql.DataSource;
@@ -35,6 +38,7 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {SNDTestConfig.class})
 @WebAppConfiguration
+@Transactional
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
         DirtiesContextTestExecutionListener.class,
         TransactionalTestExecutionListener.class,
@@ -47,14 +51,13 @@ public class ServiceAndDAOIntegration {
     private MockMvc mockMvc;
 
     @Autowired
-    private ApplicationContext applicationContext;
+    private EmployeeService employeeService;
 
     @Autowired
-    private EmployeeService employeeService;
+    private AddressService addressService;
 
     @Before
     public void setUp() throws Exception{
-        resetAutoIncrement(applicationContext, "employees", "departments");
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
     }
 
@@ -63,7 +66,7 @@ public class ServiceAndDAOIntegration {
     public void test_FindById(){
 
         Employee e = employeeService.findById(2L);
-        Assert.assertEquals("1234", e.getPhone());
+        Assert.assertEquals("123", e.getPhone());
     }
 
     @Test
@@ -77,24 +80,15 @@ public class ServiceAndDAOIntegration {
 
     @Test
     @DatabaseSetup("SNDTestDB.xml")
-    @ExpectedDatabase("SNDTestDB-AddEmp-expected.xml")
     public void testCreateEmployee(){
 
-        EmployeeDTO employeeDTO = new EmployeeDTO("Testy", "1234", "city", "street", "coast");
+        EmployeeDTO employeeDTO = new EmployeeDTO("Toosty", "1234", "city", "tstreet", "coast");
         employeeService.create(employeeDTO);
+
+        Employee e = employeeService.findByName("Toosty");
+
+        Assert.assertEquals(addressService.findById(e.getId()).getStreet(), "tstreet");
     }
 
-    private void resetAutoIncrement(ApplicationContext applicationContext, String... tables) throws SQLException {
-        DataSource dataSource = applicationContext.getBean(DataSource.class);
-        String sqlTemplate = applicationContext.getBean(Environment.class).getRequiredProperty("test.reset.sql.template");
-        try(Connection connection = dataSource.getConnection()){
-            for(String table: tables){
-                try(Statement statement = connection.createStatement()){
-                    String resetSql = String.format(sqlTemplate, table);
-                    statement.execute(resetSql);
-                }
-            }
-        }
-    }
 
 }

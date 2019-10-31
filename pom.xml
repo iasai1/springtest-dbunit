@@ -79,7 +79,19 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.5.2</version>
+            <scope>test</scope>
+        </dependency>
 
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.5.2</version>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
@@ -165,6 +177,13 @@
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-plus</artifactId>
             <version>9.4.20.v20190813</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.10</version>
             <scope>test</scope>
         </dependency>
 
@@ -314,7 +333,59 @@
         </profile>
 
         <profile>
-            <id>dev</id>
+
+            <id>hook</id>
+            <properties>
+                <dbUrl>jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1</dbUrl>
+            </properties>
+
+        </profile>
+
+        <profile>
+            <id>dev-jetty</id>
+
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.eclipse.jetty</groupId>
+                        <artifactId>jetty-maven-plugin</artifactId>
+                        <version>9.4.20.v20190813</version>
+                        <configuration>
+                            <webAppConfig>
+                                <jettyEnvXml>src/main/jetty/jetty-env.xml</jettyEnvXml>
+                            </webAppConfig>
+                            <war>target/TestThang-1.0-SNAPSHOT.war</war>
+                            <httpConnector>
+                                <port>8953</port>
+                            </httpConnector>
+                            <stopPort>8081</stopPort>
+                            <stopKey>STOP</stopKey>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>start-jetty</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>deploy-war</goal>
+                                </goals>
+                                <configuration>
+                                    <scanIntervalSeconds>0</scanIntervalSeconds>
+                                    <daemon>true</daemon>
+                                    <stopKey>STOPJETTY</stopKey>
+                                    <stopPort>8081</stopPort>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+
+        </profile>
+
+        <profile>
+            <id>dev-cat</id>
             <properties>
                 <dbUrl>jdbc:h2:file:C:/Users/ishipitc/IdeaProjects/TestThang/data/thangDB</dbUrl>
             </properties>
@@ -325,7 +396,15 @@
                         <groupId>org.apache.tomcat.maven</groupId>
                         <artifactId>tomcat7-maven-plugin</artifactId>
                         <version>2.2</version>
-
+                        <configuration>
+                            <extraDependencies>
+                                <dependency>
+                                    <groupId>com.h2database</groupId>
+                                    <artifactId>h2</artifactId>
+                                    <version>1.4.199</version>
+                                </dependency>
+                            </extraDependencies>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>deploy</id>
@@ -334,11 +413,11 @@
                                 </goals>
                                 <phase>package</phase>
                                 <configuration>
-                                    <url>http://localhost:8953/manager/</url>
+                                    <url>http://localhost:8081/manager/</url>
                                     <server>MTS</server>
                                     <path>/</path>
                                     <username>admin</username>
-                                    <password>admin</password>
+                                    <password></password>
                                     <update>true</update>
                                 </configuration>
                             </execution>
@@ -348,6 +427,7 @@
             </build>
 
         </profile>
+
 
     </profiles>
 

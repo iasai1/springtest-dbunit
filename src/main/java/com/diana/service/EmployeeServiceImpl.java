@@ -1,5 +1,6 @@
 package com.diana.service;
 
+import com.diana.dao.AddressDAO;
 import com.diana.dao.DepartmentDAO;
 import com.diana.dao.EmployeeDAO;
 import com.diana.model.Address;
@@ -10,6 +11,7 @@ import com.diana.util.error.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -23,7 +25,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeDAO employeeDAO;
 
     @Autowired
-    private AddressService addressService;
+    private AddressDAO addressDAO;
 
     @Autowired
     private DepartmentDAO departmentDAO;
@@ -64,7 +66,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         departmentDAO.add(d);
         Address address = employeeDTO.getAddress();
         address.setEmployee(employee);
-        addressService.add(address);
+        addressDAO.add(address);
     }
 
     @Override

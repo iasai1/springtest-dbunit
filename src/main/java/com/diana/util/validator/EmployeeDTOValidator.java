@@ -1,9 +1,12 @@
 package com.diana.util.validator;
 
+import com.diana.model.Department;
 import com.diana.model.Employee;
+import com.diana.service.DepartmentService;
 import com.diana.service.EmployeeService;
 import com.diana.util.dto.EmployeeDTO;
 import com.diana.util.error.EntityAlreadyExistsException;
+import com.diana.util.error.EntityNotFoundException;
 import com.diana.util.error.MalformedInputException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,6 +20,9 @@ public class EmployeeDTOValidator implements Validator {
 
     @Autowired
     private EmployeeService employeeService;
+
+    @Autowired
+    private DepartmentService departmentService;
 
     @Override
     public boolean supports(Class<?> aClass) {
@@ -41,6 +47,10 @@ public class EmployeeDTOValidator implements Validator {
         employee = employeeService.findByPhone(dto.getPhone());
         if (employee != null){
             throw new EntityAlreadyExistsException("Employee with such phone already exists");
+        }
+        Department d = departmentService.findByName(dto.getDepName());
+        if (d == null){
+            throw new EntityNotFoundException("Department with such name doesn't exist");
         }
 
     }

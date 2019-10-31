@@ -24,8 +24,6 @@ public class PersistenceConfig {
 
     @Bean
     public DataSource dataSource(){
-       // System.setProperty("java.naming.factory.url.pkgs", "org.eclipse.jetty.jndi");
-        //System.setProperty("java.naming.factory.initial", "org.eclipse.jetty.jndi.InitialContextFactory");
         return new JndiDataSourceLookup().getDataSource("jdbc/DB");
     }
 
