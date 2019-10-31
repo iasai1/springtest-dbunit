@@ -7,50 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be925670-5586-449b-bde1-950b3709a471" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/jetty/jetty-env.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/diana/TestUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/diana/config/CNSNDTestConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/diana/integration/IntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/thangDB.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/thangDB.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/config/PersistenceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/config/PersistenceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/service/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/service/DepartmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/service/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/service/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/diana/util/validator/EmployeeDTOValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/diana/util/validator/EmployeeDTOValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/diana/integration/CNSNDTestDB-addEmp-expected.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/diana/integration/CNSNDTestDB.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/diana/integration/SNDTestDB-AddEmp-expected.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/diana/integration/SNDTestDB.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/departments.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/departments.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/newDep.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/newDep.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/autotest/AutoTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/autotest/AutoTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/config/SNDTestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/config/SNDTestConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/controller/DepartmentRESTControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/controller/DepartmentRESTControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/controller/EmployeeRESTControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/controller/EmployeeRESTControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/integration/ControllerAndServiceAndDAOIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/inner_integration/ControllerAndServiceAndDAOIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/diana/integration/ServiceAndDAOIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/diana/inner_integration/ServiceAndDAOIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/newDep.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TestThang-1.0-SNAPSHOT/WEB-INF/newDep.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/diana/integration/CNSNDTestDB-addEmp-expected.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/diana/integration/CNSNDTestDB.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/diana/integration/SNDTestDB-AddEmp-expected.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/diana/integration/SNDTestDB.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.DepartmentRESTControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.DepartmentRESTControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.EmployeeRESTControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.EmployeeRESTControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.MainControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.controller.MainControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.dao.EmployeeDAOTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.dao.EmployeeDAOTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.service.EmployeeServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.service.EmployeeServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.util.HibernateCacheTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.diana.util.HibernateCacheTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.DepartmentRESTControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.DepartmentRESTControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.EmployeeRESTControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.EmployeeRESTControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.MainControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.controller.MainControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.dao.EmployeeDAOTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.dao.EmployeeDAOTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.service.EmployeeServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.service.EmployeeServiceTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.diana.util.HibernateCacheTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.diana.util.HibernateCacheTest.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -1276,7 +1233,7 @@
       <workItem from="1572334467909" duration="12051000" />
       <workItem from="1572410998461" duration="20585000" />
       <workItem from="1572497062234" duration="4226000" />
-      <workItem from="1572502030700" duration="7318000" />
+      <workItem from="1572502030700" duration="7689000" />
     </task>
     <servers />
   </component>
